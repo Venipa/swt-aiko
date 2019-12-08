@@ -1,3 +1,4 @@
+@import 'default';
 @import './bootstrap-grid.scss';
 @import 'variables';
 @import 'animations';
@@ -42,7 +43,7 @@ a {
   @include bumpEntrance();
 }
 .card {
-  background-color: rgba($body-bg, 0.25);
+  background-color: rgba($body-bg, 0.45);
   background-image: radial-gradient($body-bg 33%, transparent 33%);
   background-size: 2px 2px;
   .card-body {
@@ -117,7 +118,7 @@ video {
   background-color: lighten($body-bg, 30%);
 }
 
-button {
+button, a {
   outline: none;
   &.btn {
     $btnSize: 32px;

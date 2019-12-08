@@ -7,14 +7,14 @@
              class="fill-video"
              :loop="true"
              :paused="!videoPlaying"
-             src="/media/bg.mp4"></video>
+             src="media/bg.mp4"></video>
     </div>
     <div class="container page-content">
       <div class="d-flex flex-column justify-content-center">
         <div class="page-content-main d-flex flex-column bump"
              ref="pageContentRow">
           <div class="page-title mx-auto my-4">
-            <img src="/media/avatar.gif" class="img-fluid page-avatar" alt="Avatar">
+            <img src="media/avatar.gif" class="img-fluid page-avatar" alt="Avatar">
             <h1 class="my-0">Aiko</h1>
           </div>
 
@@ -29,8 +29,8 @@
               <div class="divider my-2"></div>
               <div class="d-flex flex-row justify-content-start">
                 <button class="btn btn-icon btn-round btn-link mr-2"><yt-icon /></button>
-                <button class="btn btn-icon btn-round btn-link mr-2"><mail-icon /></button>
-                <button class="btn btn-icon btn-round btn-link"><git-icon /></button>
+                <a class="btn btn-icon btn-round btn-link mr-2" :href="`mailto:admin@venipa.net?subject=Github: `"><mail-icon /></a>
+                <a class="btn btn-icon btn-round btn-link" :href="githubUrl" target="_blank"><git-icon /></a>
                 <div class="ml-auto"></div>
                 <button class="btn btn-icon btn-round btn-link" @click="toggleMute">
                     <vol-mute-icon v-if="videoMuted" />
@@ -52,6 +52,8 @@ import YtIcon from 'vue-material-design-icons/Youtube';
 import VolIcon from 'vue-material-design-icons/VolumeHigh';
 import VolMuteIcon from 'vue-material-design-icons/VolumeMute';
 
+import { pkg } from '../app'
+
 const defaultData = () => {
   return {
     videoVolume: 0.085,
@@ -66,6 +68,11 @@ export default {
     YtIcon,
     VolIcon,
     VolMuteIcon
+  },
+  computed: {
+      githubUrl() {
+          return pkg.repository;
+      }
   },
   data() {
     return {...defaultData(), videoMuted: localStorage.videoVolume == 0};
