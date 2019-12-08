@@ -1,8 +1,5 @@
 a {
-  -webkit-appearance: button;
-  -webkit-writing-mode: horizontal-tb !important;
   text-rendering: auto;
-  color: buttontext;
   letter-spacing: normal;
   word-spacing: normal;
   text-transform: none;
@@ -13,7 +10,5 @@ a {
   align-items: flex-start;
   cursor: pointer;
   box-sizing: border-box;
-  margin: 0em;
-  font: 400 13.3333px Arial;
   padding: 1px 6px;
 }
