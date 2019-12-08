@@ -1,0 +1,13 @@
+@mixin bumpEntrance() {
+    transform: scale(.6);
+    opacity: 0;
+    &.active {
+        transform: scale(1);
+        opacity: 1;
+        transition: opacity .2s ease, transform .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    transition: opacity .2s ease-out, transform .2s ease-out;
+}
+.border-0 {
+    border-width: 0;
+}
